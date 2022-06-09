@@ -1,7 +1,5 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Listings</h1>
-
 <div id="listings">
   <% @listings.each do |listing| %>
     <%= render listing %>
@@ -10,5 +8,6 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New listing", new_listing_path %>
+<% if user_signed_in?  %>
+  <%= link_to "New listing", new_listing_path %>
+<% end %>

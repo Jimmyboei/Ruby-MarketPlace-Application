@@ -1,4 +1,7 @@
 class ListingsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!, except: %i[index show]
+
   before_action :set_listing, only: %i[show edit update destroy]
   before_action :set_categories, only: %i[new edit]
 
@@ -20,10 +23,6 @@ class ListingsController < ApplicationController
 
   # POST /listings or /listings.json
   def create
-    # listing_params[:user_id] = current_user.id
-    # p 'test'
-    # p current_user.id
-    # p 'test_end'
     @listing = Listing.new(listing_params)
 
     respond_to do |format|
@@ -52,6 +51,7 @@ class ListingsController < ApplicationController
 
   # DELETE /listings/1 or /listings/1.json
   def destroy
+    p @listing
     @listing.destroy
 
     respond_to do |format|
@@ -65,6 +65,7 @@ class ListingsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_listing
     @listing = Listing.find(params[:id])
+    can_edit(@listing)
   end
 
   # Only allow a list of trusted parameters through.
@@ -74,5 +75,9 @@ class ListingsController < ApplicationController
 
   def set_categories
     @categories = Category.order(:name)
+  end
+
+  def can_edit(listing)
+    @can_edit = current_user && current_user.id == listing.user_id
   end
 end

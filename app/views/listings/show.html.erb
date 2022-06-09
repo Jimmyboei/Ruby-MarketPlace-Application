@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
-
 <%= render @listing %>
-
 <div>
-  <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
+  <% if @can_edit %>
+    <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
+  <% end %>
+  <% if  @can_edit %>
+    <%= button_to "Destroy this listing", @listing, method: :delete %>
+  <% end %>
+  <% if user_signed_in?  %>
+    <div>
+      <a href="/messages/new?listing-id=<%=@listing.id%>"> message</a>
+    </div>
+  <% end %>
   <%= link_to "Back to listings", listings_path %>
-
-  <%= button_to "Destroy this listing", @listing, method: :delete %>
 </div>
