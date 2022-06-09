@@ -1,9 +1,14 @@
 <h1>New message</h1>
-
-<%= render "form", message: @message %>
-
 <br>
-
+<h3> messages </h3>
+<div>
+  <% @histroy_messages.each do |histroy_message| %>
+    <div <%= histroy_message.is_response ? '' : 'style=text-align:right' %>>
+      <%= histroy_message.text %>
+    </div>
+  <% end %>
+</div>
+<%= render "form", message: @message %>
 <div>
   <%= link_to "Back to messages", messages_path %>
 </div>
