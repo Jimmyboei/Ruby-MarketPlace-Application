@@ -1,0 +1,36 @@
+<%= form_with(model: listing) do |form| %>
+  <% if listing.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+      <ul>
+        <% listing.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :price, style: "display: block" %>
+    <%= form.number_field :price %>
+  </div>
+  <div>
+    <%= form.label :condition, style: "display: block" %>
+    <%= form.text_field :condition %>
+  </div>
+  <%# <fieldset class="mb-2">
+    <%= f.label :category_id %>
+    <%# collection_select takes 4 params:
+            1. The atrribute name in this model (book) to store the selected option
+            2. The collection from which to build the options
+            3. The attribute in the collection items to use as the value of the option
+            4. The attribute in the collection items to use as the caption of the option %>
+    <%# <%= f.collection_select :category_id, @category, :id, :name %> %>
+  </fieldset> %>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
