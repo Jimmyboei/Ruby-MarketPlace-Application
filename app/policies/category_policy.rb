@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ListingPolicy
+class CategoryPolicy
   attr_reader :user, :record
   
   def initialize(user, record)
@@ -9,15 +9,15 @@ class ListingPolicy
   end
 
   def index?
-    true
+    return @user.has_role? :admin
   end
 
   def show?
-    true
+    return @user.has_role? :admin
   end
 
   def create?
-    true
+    return @user.has_role? :admin
   end
 
   def new?
@@ -25,7 +25,7 @@ class ListingPolicy
   end
 
   def update?
-    true
+    return @user.has_role? :admin
   end
 
   def edit?
@@ -33,7 +33,7 @@ class ListingPolicy
   end
 
   def destroy?
-    true
+    return @user.has_role? :admin
   end
 
   class Scope
