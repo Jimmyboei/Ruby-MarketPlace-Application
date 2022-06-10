@@ -3,24 +3,34 @@
 <div id="messages">
   <h3> my listing </h3>
   <% @recived_message_grouped.each do |key, messages| %>
+    <p>
+    <strong>Sent from User:</strong>
+    <%= User.find(messages[0].user_id).email %>
+    <strong>Listing name: </strong><%= Listing.find(messages[0].listing_id).name %>
+    </p>
     <% messages.each do |message| %>
       <%= render message %>
-      <br />
+      <br/>
     <% end %>
     <div>
       <a href="/messages/new?listing=<%= messages[0].listing_id %>&user=<%= messages[0].user_id %>"> Reply </a>
     </div>
+    <br/>
   <% end %>
 </div>
 <div id="messages">
   <h3> ohters listing </h3>
   <% @sent_message_grouped.each do |key, messages| %>
+    <p>
+    <strong>Listing name: </strong><%= Listing.find(messages[0].listing_id).name %>
+    </p>
     <% messages.each do |message| %>
       <%= render message %>
-      <br />
+      <br/>
     <% end %>
     <div>
       <a href="/messages/new?listing=<%= messages[0].listing_id %>&user=<%= messages[0].user_id %>"> ask </a>
     </div>
+    <br/>
   <% end %>
 </div>
