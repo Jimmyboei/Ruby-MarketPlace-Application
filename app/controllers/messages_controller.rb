@@ -19,11 +19,13 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
-    @listing_id = request.query_parameters && request.query_parameters['listing-id']
-    @user_id = current_user.id
+    @listing_id = request.query_parameters && request.query_parameters['listing']
+    @user_id = request.query_parameters && request.query_parameters['user']
+
+    # redirect_to messages_path if @listing_id && @user_id
 
     listing = Listing.find(@listing_id)
-    @is_response = listing && listing.user_id == @user_id
+    @is_response = listing && listing.user_id == current_user.id
 
     @histroy_messages = Message.where(listing_id: @listing_id, user_id: @user_id).all
 

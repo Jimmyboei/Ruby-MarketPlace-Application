@@ -6,7 +6,7 @@
     <%= render message %>
     <p>
       <div>
-        <a href="/messages/new?listing-id=<%= message.listing_id %>"> Reply </a>
+        <a href="/messages/new?listing=<%= message.listing_id %>&user=<%= message.user_id %>"> Reply </a>
       </div>
     </p>
   <% end %>
@@ -17,7 +17,7 @@
     <%= render message %>
     <p>
       <div>
-        <a href="/messages/new?listing-id=<%= message.listing_id %>"> Reply </a>
+        <a href="/messages/new?listing=<%= message.listing_id %>&user=<%= message.user_id %>"> ask </a>
       </div>
     </p>
   <% end %>

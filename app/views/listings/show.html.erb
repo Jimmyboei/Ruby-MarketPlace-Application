@@ -7,9 +7,9 @@
   <% if  @can_edit %>
     <%= button_to "Destroy this listing", @listing, method: :delete %>
   <% end %>
-  <% if user_signed_in?  %>
+  <% if user_signed_in? && !@can_edit %>
     <div>
-      <a href="/messages/new?listing-id=<%=@listing.id%>"> Send message </a>
+      <a href="/messages/new?listing=<%=@listing.id%>&user=<%= current_user.id %>"> Send message </a>
     </div>
   <% end %>
   <%= link_to "Back to listings", listings_path %>

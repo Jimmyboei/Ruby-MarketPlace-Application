@@ -10,23 +10,17 @@
     </div>
   <% end %>
   <div>
-    <%= form.label :text, style: "display: block" %>
-    <%= form.text_field :text %>
+    <%= form.text_field:text  %>
+    <%= form.submit 'send message' %>
   </div>
-  <div>
-    <%= @is_response %>
-    <%= form.label :is_response, style: "display: block" %>
-    <%= form.check_box :is_response, value:@is_response  %>
+  <%= @user_id %>
+  <div style="display: none">
+    <%= form.check_box :is_response, checked:@is_response  %>
   </div>
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
+  <div  style="display: none">
     <%= form.text_field :user_id, value:@user_id %>
   </div>
-  <div>
-    <%= form.label :listing_id, style: "display: block" %>
+  <div style="display: none">
     <%= form.text_field :listing_id, value:@listing_id  %>
-  </div>
-  <div>
-    <%= form.submit %>
   </div>
 <% end %>
