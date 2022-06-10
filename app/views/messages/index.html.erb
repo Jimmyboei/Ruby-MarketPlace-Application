@@ -1,14 +1,24 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Messages</h1>
-
 <div id="messages">
-  <% @messages.each do |message| %>
+  <h3> my listing </h3>
+  <% @recived_message.each do |message| %>
     <%= render message %>
     <p>
-      <%= link_to "Show this message", message %>
+      <div>
+        <a href="/messages/new?listing-id=<%= message.listing_id %>"> Reply </a>
+      </div>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New message", new_message_path %>
+<div id="messages">
+  <h3> ohters listing </h3>
+  <% @sent_message.each do |message| %>
+    <%= render message %>
+    <p>
+      <div>
+        <a href="/messages/new?listing-id=<%= message.listing_id %>"> Reply </a>
+      </div>
+    </p>
+  <% end %>
+</div>

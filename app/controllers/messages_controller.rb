@@ -5,7 +5,13 @@ class MessagesController < ApplicationController
 
   # GET /messages or /messages.json
   def index
-    @messages = Message.all
+    user_id = current_user.id
+    listings = Listing.where(user_id:).all
+
+    listing_ids = listings.map { |item| item.id }
+
+    @recived_message = Message.where(listing_id: listing_ids).all
+    @sent_message = Message.where(user_id:).all
   end
 
   # GET /messages/1 or /messages/1.json
@@ -17,7 +23,7 @@ class MessagesController < ApplicationController
     @user_id = current_user.id
 
     listing = Listing.find(@listing_id)
-    @is_reponse = listing && listing.user_id != @user_id
+    @is_response = listing && listing.user_id == @user_id
 
     @histroy_messages = Message.where(listing_id: @listing_id, user_id: @user_id).all
 

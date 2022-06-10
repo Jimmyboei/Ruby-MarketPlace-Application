@@ -14,6 +14,7 @@
     <%= form.text_field :text %>
   </div>
   <div>
+    <%= @is_response %>
     <%= form.label :is_response, style: "display: block" %>
     <%= form.check_box :is_response, value:@is_response  %>
   </div>
