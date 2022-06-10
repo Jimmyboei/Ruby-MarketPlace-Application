@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  before_action :check_auth
 
   # GET /messages or /messages.json
   def index
@@ -74,5 +75,9 @@ class MessagesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def message_params
     params.require(:message).permit(:text, :is_response, :user_id, :listing_id)
+  end
+
+  def check_auth
+    authorize Message
   end
 end

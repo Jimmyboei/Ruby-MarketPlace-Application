@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :authenticate_user!, except: %i[index show]
+  before_action :check_auth
 
   before_action :set_listing, only: %i[show edit update destroy]
   before_action :set_categories, only: %i[new edit]
@@ -81,3 +82,7 @@ class ListingsController < ApplicationController
     @can_edit = current_user && current_user.id == listing.user_id
   end
 end
+
+  def check_auth
+    authorize Listing
+  end

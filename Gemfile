@@ -75,3 +75,7 @@ group :test do
 end
 
 gem "devise", "~> 4.8"
+
+gem "rolify", "~> 6.0"
+
+gem "pundit", "~> 2.2"

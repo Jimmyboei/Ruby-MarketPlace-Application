@@ -9,7 +9,7 @@
   <% end %>
   <% if user_signed_in?  %>
     <div>
-      <a href="/messages/new?listing-id=<%=@listing.id%>"> message</a>
+      <a href="/messages/new?listing-id=<%=@listing.id%>"> Send message </a>
     </div>
   <% end %>
   <%= link_to "Back to listings", listings_path %>
