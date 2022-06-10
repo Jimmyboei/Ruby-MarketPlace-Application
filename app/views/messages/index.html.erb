@@ -2,23 +2,25 @@
 <h1>Messages</h1>
 <div id="messages">
   <h3> my listing </h3>
-  <% @recived_message.each do |message| %>
-    <%= render message %>
-    <p>
-      <div>
-        <a href="/messages/new?listing=<%= message.listing_id %>&user=<%= message.user_id %>"> Reply </a>
-      </div>
-    </p>
+  <% @recived_message_grouped.each do |key, messages| %>
+    <% messages.each do |message| %>
+      <%= render message %>
+      <br />
+    <% end %>
+    <div>
+      <a href="/messages/new?listing=<%= messages[0].listing_id %>&user=<%= messages[0].user_id %>"> Reply </a>
+    </div>
   <% end %>
 </div>
 <div id="messages">
   <h3> ohters listing </h3>
-  <% @sent_message.each do |message| %>
-    <%= render message %>
-    <p>
-      <div>
-        <a href="/messages/new?listing=<%= message.listing_id %>&user=<%= message.user_id %>"> ask </a>
-      </div>
-    </p>
+  <% @sent_message_grouped.each do |key, messages| %>
+    <% messages.each do |message| %>
+      <%= render message %>
+      <br />
+    <% end %>
+    <div>
+      <a href="/messages/new?listing=<%= messages[0].listing_id %>&user=<%= messages[0].user_id %>"> ask </a>
+    </div>
   <% end %>
 </div>

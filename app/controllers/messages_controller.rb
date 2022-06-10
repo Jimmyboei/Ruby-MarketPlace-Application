@@ -10,8 +10,12 @@ class MessagesController < ApplicationController
 
     listing_ids = listings.map { |item| item.id }
 
-    @recived_message = Message.where(listing_id: listing_ids).all
-    @sent_message = Message.where(user_id:).all
+    recived_message = Message.where(listing_id: listing_ids).all
+
+    @recived_message_grouped = recived_message.group_by { |item| item.listing_id.to_s + '-' + item.user_id.to_s }
+
+    sent_message = Message.where(user_id:).all
+    @sent_message_grouped = sent_message.group_by { |item| item.listing_id.to_s + '-' + item.user_id.to_s }
   end
 
   # GET /messages/1 or /messages/1.json
