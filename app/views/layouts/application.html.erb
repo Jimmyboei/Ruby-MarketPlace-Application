@@ -26,7 +26,7 @@
             <li class="nav-item">
               <%= link_to 'Messages', messages_path, class: 'nav-link' %>
             </li>
-            <% if policy(:category).index? %>
+            <% if user_signed_in? && policy(:category).index? %>
               <li class="nav-item">
                 <%= link_to 'Categories', categories_path, class: 'nav-link' %>
               </li>
