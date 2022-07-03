@@ -11,3 +11,8 @@ Category.create(name: "Appliance")
 Category.create(name: "Kitchen & Dining")
 Category.create(name: "Home Decor")
 Category.create(name: "Others")
+
+user = User.create(email: 'admin@test.com', password: 'admin123')
+user.add_role :admin
+
+User.create(email: 'foo@test.com', password: 'foo123')
