@@ -1,4 +1,5 @@
 <p style="color: green"><%= notice %></p>
+<%= image_tag @listing.picture if @listing.picture.attached? %>
 <%= render @listing %>
 <div>
   <% if @can_edit %>
