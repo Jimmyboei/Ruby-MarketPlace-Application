@@ -3,4 +3,5 @@ class Listing < ApplicationRecord
     belongs_to :user
     has_many :messages, dependent: :destroy
     resourcify
+    has_one_attached :picture
 end
