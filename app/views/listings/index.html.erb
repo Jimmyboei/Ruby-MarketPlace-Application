@@ -2,7 +2,7 @@
 <h1>Listings</h1>
 <div id="listings">
   <% @listings.each do |listing| %>
-    <%= image_tag listing.picture %>
+    <%= image_tag listing.picture if listing.picture.attached? %>
     <%= render listing %>
     <p>
       <%= link_to "Show this listing", listing %>
