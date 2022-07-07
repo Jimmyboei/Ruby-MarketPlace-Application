@@ -3,17 +3,23 @@
 <% if user_signed_in?  %>
   <%= link_to "New listing", new_listing_path, class: 'btn btn-primary' %>
 <% end %>
-<div id="listings">
+<div class="row">
   <% @listings.each do |listing| %>
-    <% if listing.picture.attached? %>
-      <%= image_tag listing.picture %>
-    <% else %>
-      <%= image_tag("listing_default.png", alt: "Default Listing Picture") %>
-    <% end %>
-    <%= render listing %>
-    <p>
-      <%= link_to "Show this listing", listing %>
-    </p>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <% if listing.picture.attached? %>
+          <%= image_tag listing.picture %>
+        <% else %>
+           <%= image_tag("listing_default.png", alt: "Default Listing Picture") %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= listing.name %></h5>
+          <%= number_to_currency(listing.price) %>
+          <p class="card-text">  <%= listing.condition %>.</p>
+          <%= link_to 'Show this listing', listing, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
