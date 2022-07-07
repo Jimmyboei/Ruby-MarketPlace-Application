@@ -31,6 +31,13 @@
       <%= form.collection_select :category_id, @categories, :id, :name %>
     </div>
     <div class="mb-2">
+      <% if @listing.picture.attached? %>
+        <%= cl_image_tag @listing.picture.key, transformation: ["media_lib_thumb"], cloud_name: 'jimmyboei' %>
+      <% else %>
+        <%= image_tag("listing_default.png") %>
+      <% end %>
+    </div>
+    <div class="mb-2">
       <%= form.label :picture %>
       <%= form.file_field :picture %>
     </div>

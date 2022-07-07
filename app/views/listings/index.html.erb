@@ -10,7 +10,7 @@
         <% if listing.picture.attached? %>
           <%= image_tag listing.picture %>
         <% else %>
-           <%= image_tag("listing_default.png", alt: "Default Listing Picture") %>
+           <%= image_tag("listing_default.png") %>
         <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= listing.name %></h5>
