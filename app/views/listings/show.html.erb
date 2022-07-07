@@ -1,11 +1,13 @@
 <p style="color: green"><%= notice %></p>
-<%= image_tag @listing.picture if @listing.picture.attached? %>
+<% if @listing.picture.attached? %>
+  <%= image_tag @listing.picture %>
+<% else %>
+  <%= image_tag("listing_default.png", alt: "Default Listing Picture") %>
+<% end %>
 <%= render @listing %>
 <div>
   <% if @can_edit %>
-    <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
-  <% end %>
-  <% if  @can_edit %>
+    <%= link_to "Edit this listing", edit_listing_path(@listing) %>
     <%= button_to "Destroy this listing", @listing, method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete '#{@listing.name}'?" } } %>
   <% end %>
   <% if user_signed_in? && !@can_edit %>
