@@ -1,12 +1,12 @@
 <p style="color: green"><%= notice %></p>
 <h1>Listings</h1>
 <% if user_signed_in?  %>
-  <%= link_to "New listing", new_listing_path, class: 'btn btn-primary' %>
+  <%= link_to "New listing", new_listing_path, class: "btn btn-primary my-1" %>
 <% end %>
 <div class="row">
   <% @listings.each do |listing| %>
     <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
+      <div class="card my-1" style="width: 18rem;">
         <% if listing.picture.attached? %>
           <%= image_tag listing.picture %>
         <% else %>
