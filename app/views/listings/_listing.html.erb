@@ -1,7 +1,7 @@
 <div id="<%= dom_id listing %>">
   <p>
-    <strong>id:</strong>
-    <%= listing.id %>
+    <strong>Seller:</strong>
+    <%= listing.user.email %>
   </p>
   <p>
     <strong>Name:</strong>
@@ -9,11 +9,11 @@
   </p>
   <p>
     <strong>Price:</strong>
-    <%= listing.price %>
+    <%= number_to_currency(listing.price) %>
   </p>
   <p>
-    <strong>category_id:</strong>
-    <%= listing.category_id %>
+    <strong>Category:</strong>
+    <%= listing.category.name %>
   </p>
   <p>
     <strong>Condition:</strong>
