@@ -1,12 +1,13 @@
 <p style="color: green"><%= notice %></p>
 <h1>Messages</h1>
 <div id="messages">
-  <h3> my listing </h3>
-  <% @recived_message_grouped.each do |key, messages| %>
+  <h3> Enquires For My Listing </h3>
+  <% @recived_message_grouped.each do |listing, messages| %>
     <p>
     <strong>Sent from User:</strong>
     <%= User.find(messages[0].user_id).email %>
-    <strong>Listing name: </strong><%= Listing.find(messages[0].listing_id).name %>
+    <strong>for my listing: </strong><%= link_to Listing.find(messages[0].listing_id).name, Listing.find(messages[0].listing_id) %>
+    <strong>Listing key: </strong><%= listing %>
     </p>
     <% messages.each do |message| %>
       <%= render message %>
@@ -19,17 +20,17 @@
   <% end %>
 </div>
 <div id="messages">
-  <h3> ohters listing </h3>
+  <h3> Want To Buy </h3>
   <% @sent_message_grouped.each do |key, messages| %>
     <p>
-    <strong>Listing name: </strong><%= Listing.find(messages[0].listing_id).name %>
+    <strong>Listing name: </strong><%= link_to Listing.find(messages[0].listing_id).name, Listing.find(messages[0].listing_id) %>
     </p>
     <% messages.each do |message| %>
       <%= render message %>
       <br/>
     <% end %>
     <div>
-      <a href="/messages/new?listing=<%= messages[0].listing_id %>&user=<%= messages[0].user_id %>"> ask </a>
+      <a href="/messages/new?listing=<%= messages[0].listing_id %>&user=<%= messages[0].user_id %>"> Send message to seller </a>
     </div>
     <br/>
   <% end %>
