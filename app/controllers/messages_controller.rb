@@ -28,8 +28,8 @@ class MessagesController < ApplicationController
 
     # redirect_to messages_path if @listing_id && @user_id
 
-    listing = Listing.find(@listing_id)
-    @is_response = listing && listing.user_id == current_user.id
+    @listing = Listing.find(@listing_id)
+    @is_response = @listing && @listing.user_id == current_user.id
 
     @histroy_messages = Message.where(listing_id: @listing_id, user_id: @user_id).all
 
