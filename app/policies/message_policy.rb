@@ -25,7 +25,7 @@ class MessagePolicy
   end
 
   def update?
-    true
+    false
   end
 
   def edit?
@@ -33,7 +33,7 @@ class MessagePolicy
   end
 
   def destroy?
-    true
+    false
   end
 
   class Scope
