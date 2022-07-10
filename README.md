@@ -53,7 +53,7 @@ The resident in Rise Apartment who wants to sell or buy household items.
 - As a user, I want to keey sending messages to others regarding a specific listing.
 - As a user, I cannot edit or delete messages I sent or received.
 - As an admin user, I can view and edit the categories for listings.
--  
+ 
 
 #### R13 Wireframes for your app
 
@@ -212,3 +212,4 @@ create_table "categories", force: :cascade do |t|
 
 #### R20 Describe the way tasks are allocated and tracked in your project
 
+I used the Agile methodology for the project management and trello to devide each stage into to-do lists and small tasks to stay in the right track. In the planning stage, the first thing to do was to identify the problem and design the ERD. Once the relationship between models were cleared, the next task was to design the wireframe for webpages and start buidiling the app. This was done by diving the app development into sections based on the user stories and related features. The Github is used for source control throughout the project and also used in the Heroku development. In the final production stage the app and its database was checked again to ensure bug free before final release and finish the documentation.  
