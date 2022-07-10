@@ -23,11 +23,11 @@ New users can view all listings and if they are interested, they can sign up to 
 
 - Sitemap
 
-placeholder
+Can be found in doc/Sitemap.png
 
 - Screenshots
 
-placeholder
+Can be found in doc/screenshots.pptx
 
 - Target audience
 
@@ -57,11 +57,11 @@ The resident in Rise Apartment who wants to sell or buy household items.
 
 #### R13 Wireframes for your app
 
-lksdfjlkja
+Can be found in doc/Wireframe.pdf
 
 #### R14 An ERD for your app
 
-dsafljk
+Can be found in doc/ERD.png
 
 #### R15 Explain the different high-level components (abstractions) in your app
 
