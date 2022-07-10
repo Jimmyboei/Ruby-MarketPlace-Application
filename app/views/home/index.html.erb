@@ -1,2 +1,10 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white" style="background-image: url(<%= asset_path 'home.jpg' %>); height: 80vh">
+    <div class="bg-dark p-2 bg-opacity-50">
+        <h1>Rise Apartment Marketplace</h1>
+        <p>Connect with your neighbors in Rise Apartment. Find great bargains next door, or help your unwanted furnitures and appliances find a new home!</p>
+        <div>
+            <%= link_to "Show Listings", listings_path, class: "btn btn-primary" %>
+            <%= link_to 'View Messages', messages_path, class: "btn btn-primary" %>
+        </div>
+    </div>
+</div>
