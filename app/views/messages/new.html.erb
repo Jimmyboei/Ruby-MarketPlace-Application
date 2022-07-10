@@ -1,21 +1,22 @@
 <h1>Message for <%= link_to @listing.name, @listing %></h1>
 <br>
 <%# display the histroy message with dialogue format %>
-<div>
+<div class="container-fluid">
   <% @histroy_messages.each do |histroy_message| %>
+  <div class="row">
     <% if histroy_message.is_response %>
-      <div class="text-end bg-success p-2 text-dark bg-opacity-50 mb-2">
+      <div class="text-end bg-success p-2 text-dark bg-opacity-25 mb-2 rounded-2 col-md-4 ms-auto" style="width: 30%;">
         <%= histroy_message.text %>
       </div>
     <% else %>
-      <div class="bg-secondary p-2 text-dark bg-opacity-50 mb-2">
+      <div class="bg-secondary p-2 text-dark bg-opacity-25 mb-2 rounded-2 col-md-4" style="width: 30%;">
         <%= histroy_message.text %>
       </div>
     <% end %>
+  </div>
   <% end %>
 </div>
-
+<div class="container-fluid my-2">
 <%= render "form", message: @message %>
-<div>
-  <%= link_to "Back to messages", messages_path %>
+<%= link_to "Back to messages", messages_path %>
 </div>
