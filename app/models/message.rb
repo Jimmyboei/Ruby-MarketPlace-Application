@@ -3,4 +3,3 @@ class Message < ApplicationRecord
   belongs_to :listing
   resourcify
 end
-ff
