@@ -28,27 +28,25 @@ New users can view all listings and if they are interested, they can sign up to 
 - Screenshots
  - homepage
   ![homepage](app/assets/images/homepage.png)
- - Sign up an account
+ - Sign up page, users can only browse listings without an account
   ![signup](app/assets/images/signup.png)
  - Log in to create listings and send messages to other users
   ![signin](app/assets/images/signin.png)
- - 4
- - 5
- - 6
- - 7
- - 8
- - 9
- - 10
-![homepage](app/assets/images/homepage.png)
-![signup](app/assets/images/signup.png)
-![signin](app/assets/images/signin.png)
-![browse](app/assets/images/browselistings.png)
-![newlisting](app/assets/images/createlisting.png)
-![editlisting](app/assets/images/editlisting.png)
-![viewlisting](app/assets/images/sendmessageinlisting.png)
-![listingowner](app/assets/images/owneroflisting.png)
-![message](app/assets/images/messagepage.png)
-![messagedtails](app/assets/images/messagedetails.png)
+ - Browse all listings
+  ![browse](app/assets/images/browselistings.png)
+ - Create a new listing, a default picture is used if the user did not upload a picture for the listing
+  ![newlisting](app/assets/images/createlisting.png)
+ - Users can edit their listings and update the picture
+  ![editlisting](app/assets/images/editlisting.png)
+ - User can send message to sellers in the listing page
+  ![viewlisting](app/assets/images/sendmessageinlisting.png) 
+ - In the user's own listing page, he cannot send message to himself and have the option to edit or delete the listing
+  ![listingowner](app/assets/images/owneroflisting.png)
+ - The message page is divided in two groups. The top group "Enquires For My Listing" shows the message from other users. The bottom group "Want to Buy" shows the user's sent message. All messages are grouped based on the listing and user.
+  ![message](app/assets/images/messagepage.png)
+ - When users click on the 'Reply' or 'Send message to seller', they can access all messages for each listing from different user. These messages are displayed in a chat format. The message from other user is on the left side with grey background. The message from current user is on the right side with green background.
+  ![messagedtails](app/assets/images/messagedetails.png)
+
 
 - Target audience
 
