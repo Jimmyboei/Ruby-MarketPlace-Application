@@ -26,6 +26,19 @@ New users can view all listings and if they are interested, they can sign up to 
 ![sitemap](app/assets/images/Sitemap.png)
 
 - Screenshots
+ - homepage
+  ![homepage](app/assets/images/homepage.png)
+ - Sign up an account
+  ![signup](app/assets/images/signup.png)
+ - Log in to create listings and send messages to other users
+  ![signin](app/assets/images/signin.png)
+ - 4
+ - 5
+ - 6
+ - 7
+ - 8
+ - 9
+ - 10
 ![homepage](app/assets/images/homepage.png)
 ![signup](app/assets/images/signup.png)
 ![signin](app/assets/images/signin.png)
