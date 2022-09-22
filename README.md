@@ -23,7 +23,7 @@ New users can view all listings and if they are interested, they can sign up to 
 
 - Sitemap
 
-Can be found in doc/Sitemap.png
+![sitemap](app/assets/images/Sitemap.png)
 
 - Screenshots
 
@@ -61,7 +61,7 @@ Can be found in doc/Wireframe.pdf
 
 #### R14 An ERD for your app
 
-Can be found in doc/ERD.png
+![ERD](app/assets/images/ERD.png)
 
 #### R15 Explain the different high-level components (abstractions) in your app
 
