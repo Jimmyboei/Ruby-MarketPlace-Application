@@ -26,8 +26,16 @@ New users can view all listings and if they are interested, they can sign up to 
 ![sitemap](app/assets/images/Sitemap.png)
 
 - Screenshots
-
-Can be found in doc/screenshots.pptx
+![homepage](app/assets/images/homepage.png)
+![signup](app/assets/images/signup.png)
+![signin](app/assets/images/signin.png)
+![browse](app/assets/images/browselistings.png)
+![newlisting](app/assets/images/createlisting.png)
+![editlisting](app/assets/images/editlisting.png)
+![viewlisting](app/assets/images/sendmessageinlisting.png)
+![listingowner](app/assets/images/owneroflisting.png)
+![message](app/assets/images/messagepage.png)
+![messagedtails](app/assets/images/messagedetails.png)
 
 - Target audience
 
